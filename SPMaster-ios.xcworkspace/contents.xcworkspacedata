@@ -5,6 +5,6 @@
       location = "group:SingleViewExample/SingleViewExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../SPMaster/TabbarProject/TabbarProject.xcodeproj">
+      location = "group:TabbarProject/TabbarProject.xcodeproj">
    </FileRef>
 </Workspace>
