@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SingleViewExample/SingleViewExample.xcodeproj">
+      location = "group:TabbarProject/TabbarProject.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TabbarProject/TabbarProject.xcodeproj">
+      location = "group:SingleViewExample/SingleViewExample.xcodeproj">
    </FileRef>
 </Workspace>
