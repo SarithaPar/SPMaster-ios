@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+inhibit_all_warnings!
+
+platform :ios, '11.0'
+
+#workspace 'SPMaster-ios/SPMaster-ios.xcworkspace'
+project 'TabbarProject.xcodeproj'
+
+target 'TabbarProject' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+
+  # Pods for TabbarProject
+
+  target 'TabbarProjectTests' do
+    inherit! :search_paths
+    pod 'SBTUITestTunnel/Server', :configurations => ['Debug']
+  end
+
+  target 'TabbarProjectUITests' do
+    inherit! :search_paths
+    pod 'SBTUITestTunnel/Client'
+  end
+
+end
