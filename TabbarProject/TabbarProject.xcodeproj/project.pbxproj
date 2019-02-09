@@ -10,6 +10,7 @@
 		407FD2072201706500A98B97 /* TabbarProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD2062201706500A98B97 /* TabbarProjectTests.swift */; };
 		407FD2102201733D00A98B97 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD20F2201733D00A98B97 /* BaseTest.swift */; };
 		407FD2122201889800A98B97 /* TabbarProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD2112201889800A98B97 /* TabbarProject.swift */; };
+		40B2BFBC22050A5600DFA33C /* firstSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BFBB22050A5600DFA33C /* firstSnapshot.swift */; };
 		40EA25F6220110FF0094DBDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA25F5220110FF0094DBDA /* AppDelegate.swift */; };
 		40EA25F8220110FF0094DBDA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA25F7220110FF0094DBDA /* FirstViewController.swift */; };
 		40EA25FA220110FF0094DBDA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA25F9220110FF0094DBDA /* SecondViewController.swift */; };
@@ -46,6 +47,7 @@
 		407FD2082201706500A98B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		407FD20F2201733D00A98B97 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		407FD2112201889800A98B97 /* TabbarProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarProject.swift; sourceTree = "<group>"; };
+		40B2BFBB22050A5600DFA33C /* firstSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstSnapshot.swift; sourceTree = "<group>"; };
 		40E54770CDFBF5450F98D6F1 /* Pods-TabbarProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabbarProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabbarProject/Pods-TabbarProject.release.xcconfig"; sourceTree = "<group>"; };
 		40EA25F2220110FF0094DBDA /* TabbarProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbarProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EA25F5220110FF0094DBDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,10 +110,12 @@
 		407FD2052201706500A98B97 /* TabbarProjectTests */ = {
 			isa = PBXGroup;
 			children = (
+				40B2BFB62205069300DFA33C /* FBSnapshots */,
 				407FD20E2201714D00A98B97 /* GivenWhenThenSteps */,
 				407FD2062201706500A98B97 /* TabbarProjectTests.swift */,
 				407FD2082201706500A98B97 /* Info.plist */,
 				407FD2112201889800A98B97 /* TabbarProject.swift */,
+				40B2BFBB22050A5600DFA33C /* firstSnapshot.swift */,
 			);
 			path = TabbarProjectTests;
 			sourceTree = "<group>";
@@ -122,6 +126,29 @@
 				407FD20F2201733D00A98B97 /* BaseTest.swift */,
 			);
 			path = GivenWhenThenSteps;
+			sourceTree = "<group>";
+		};
+		40B2BFB62205069300DFA33C /* FBSnapshots */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BFB8220506C000DFA33C /* ReferenceImages_64 */,
+				40B2BFB7220506B300DFA33C /* Failures */,
+			);
+			path = FBSnapshots;
+			sourceTree = "<group>";
+		};
+		40B2BFB7220506B300DFA33C /* Failures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Failures;
+			sourceTree = "<group>";
+		};
+		40B2BFB8220506C000DFA33C /* ReferenceImages_64 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReferenceImages_64;
 			sourceTree = "<group>";
 		};
 		40EA25E9220110FE0094DBDA = {
@@ -387,6 +414,7 @@
 			files = (
 				407FD2102201733D00A98B97 /* BaseTest.swift in Sources */,
 				407FD2122201889800A98B97 /* TabbarProject.swift in Sources */,
+				40B2BFBC22050A5600DFA33C /* firstSnapshot.swift in Sources */,
 				407FD2072201706500A98B97 /* TabbarProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

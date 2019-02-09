@@ -13,6 +13,7 @@ end
     inherit! :search_paths
     # Pods for testing
     pod 'SBTUITestTunnel/Server', :configuration => ['Debug']
+    pod 'iOSSnapshotTestCase'
   end
 
   target 'TabbarProjectUITests' do

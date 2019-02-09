@@ -1,0 +1,6 @@
+module Pods_TabbarProjectTests {
+  umbrella header "Pods-TabbarProjectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
