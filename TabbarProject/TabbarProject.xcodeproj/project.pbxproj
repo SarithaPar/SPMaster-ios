@@ -20,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		400BD17E23FFA9F400017D5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 400BD17A23FFA9F300017D5F /* TableViewControllerExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 400BD16323FFA9F200017D5F;
+			remoteInfo = TableViewControllerExample;
+		};
 		407FD2092201706500A98B97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 40EA25EA220110FE0094DBDA /* Project object */;
@@ -37,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		400BD17A23FFA9F300017D5F /* TableViewControllerExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TableViewControllerExample.xcodeproj; path = TableViewControllerExample/TableViewControllerExample.xcodeproj; sourceTree = "<group>"; };
 		407FD2042201706500A98B97 /* TabbarProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabbarProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		407FD2062201706500A98B97 /* TabbarProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarProjectTests.swift; sourceTree = "<group>"; };
 		407FD2082201706500A98B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +88,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		400BD15923FFA9A700017D5F /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				400BD17A23FFA9F300017D5F /* TableViewControllerExample.xcodeproj */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		400BD17B23FFA9F300017D5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				400BD17F23FFA9F400017D5F /* TableViewControllerExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		407FD2052201706500A98B97 /* TabbarProjectTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +126,7 @@
 		40EA25E9220110FE0094DBDA = {
 			isa = PBXGroup;
 			children = (
+				400BD15923FFA9A700017D5F /* TableViewController */,
 				40EA25F4220110FF0094DBDA /* TabbarProject */,
 				40EA260E220111480094DBDA /* TabbarProjectUITests */,
 				407FD2052201706500A98B97 /* TabbarProjectTests */,
@@ -232,6 +257,12 @@
 			mainGroup = 40EA25E9220110FE0094DBDA;
 			productRefGroup = 40EA25F3220110FF0094DBDA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 400BD17B23FFA9F300017D5F /* Products */;
+					ProjectRef = 400BD17A23FFA9F300017D5F /* TableViewControllerExample.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				40EA25F1220110FF0094DBDA /* TabbarProject */,
@@ -240,6 +271,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		400BD17F23FFA9F400017D5F /* TableViewControllerExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TableViewControllerExample.app;
+			remoteRef = 400BD17E23FFA9F400017D5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		407FD2022201706500A98B97 /* Resources */ = {
