@@ -16,6 +16,7 @@
 		400BD18123FFAED800017D5F /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400BD18023FFAED800017D5F /* StoriesTableViewController.swift */; };
 		400BD18423FFB4E500017D5F /* StyleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400BD18323FFB4E500017D5F /* StyleTableViewController.swift */; };
 		400BD18723FFB88700017D5F /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400BD18623FFB88700017D5F /* CustomTableViewController.swift */; };
+		40A809E024027173000905A5 /* GroupedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A809DF24027173000905A5 /* GroupedTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		400BD18023FFAED800017D5F /* StoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		400BD18323FFB4E500017D5F /* StyleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTableViewController.swift; sourceTree = "<group>"; };
 		400BD18623FFB88700017D5F /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		40A809DF24027173000905A5 /* GroupedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		400BD16523FFA9F200017D5F /* TableViewControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				40A809DE24027151000905A5 /* GroupedCellTable */,
 				400BD18523FFB7E900017D5F /* CustomCellTable */,
 				400BD18223FFB2F400017D5F /* CellStyles */,
 				400BD16623FFA9F200017D5F /* AppDelegate.swift */,
@@ -90,6 +93,14 @@
 				400BD18623FFB88700017D5F /* CustomTableViewController.swift */,
 			);
 			path = CustomCellTable;
+			sourceTree = "<group>";
+		};
+		40A809DE24027151000905A5 /* GroupedCellTable */ = {
+			isa = PBXGroup;
+			children = (
+				40A809DF24027173000905A5 /* GroupedTableViewController.swift */,
+			);
+			path = GroupedCellTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A809E024027173000905A5 /* GroupedTableViewController.swift in Sources */,
 				400BD16B23FFA9F200017D5F /* TableViewController.swift in Sources */,
 				400BD16723FFA9F200017D5F /* AppDelegate.swift in Sources */,
 				400BD18123FFAED800017D5F /* StoriesTableViewController.swift in Sources */,
