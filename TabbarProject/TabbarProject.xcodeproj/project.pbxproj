@@ -104,6 +104,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		40131DAC2410D3380073840E /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStructure;
+			sourceTree = "<group>";
+		};
 		407FD2052201706500A98B97 /* TabbarProjectTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +133,7 @@
 		40EA25E9220110FE0094DBDA = {
 			isa = PBXGroup;
 			children = (
+				40131DAC2410D3380073840E /* DataStructure */,
 				400BD15923FFA9A700017D5F /* TableViewController */,
 				40EA25F4220110FF0094DBDA /* TabbarProject */,
 				40EA260E220111480094DBDA /* TabbarProjectUITests */,

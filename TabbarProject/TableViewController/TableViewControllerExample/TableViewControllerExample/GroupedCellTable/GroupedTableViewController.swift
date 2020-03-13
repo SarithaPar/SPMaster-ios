@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Headline2 {
+struct Headline5 {
 	var id : Int
 	var date : Date
 	var title : String
@@ -16,9 +16,24 @@ struct Headline2 {
 	var image : String
 }
 
-struct MonthSection {
-	var month : Date
-	var headlines : [Headline2]
+private func firstDayOfMonth(date: Date) -> Date {
+	let calendar = Calendar.current
+	let components = calendar.dateComponents([.year, .month], from: date)
+	return calendar.date(from: components)!
+}
+
+struct GroupedSection <SectionItem : Hashable, RowItem> {
+	
+	var sectionItem : SectionItem
+	var rows : [RowItem]
+	
+	static func group(rows: [RowItem], by criteria: (RowItem) -> SectionItem)
+		-> [GroupedSection<SectionItem, RowItem>] {
+		let groups = Dictionary(grouping: rows, by: criteria)
+		return groups.map(GroupedSection.init(sectionItem: rows:))
+	}
+	
+	
 }
 
 private func parseDate(_ str : String) -> Date {
@@ -29,20 +44,16 @@ private func parseDate(_ str : String) -> Date {
 
 class GroupedTableViewController: UITableViewController {
 	
-	var sections = [MonthSection]()
+	var sections = [GroupedSection<Date, Headline5>]()
 
 	var headlines = [
-        Headline2(id: 1, date: parseDate("2018-05-15"), title: "Proin suscipit maximus", text: "Quisque ultrices odio in neque eleifend eleifend. Praesent tincidunt euismod sem, et rhoncus lorem facilisis eget.", image: "Blueberry"),
-        Headline2(id: 2, date: parseDate("2018-02-15"), title: "In ac ante sapien", text: "Aliquam egestas ultricies dapibus. Nam molestie nunc in ipsum vehicula accumsan quis sit amet quam. Sed vel feugiat eros.", image: "Cantaloupe"),
-        Headline2(id: 3, date: parseDate("2018-03-05"), title: "Lorem Ipsum", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id ornare tortor, quis dictum enim. Morbi convallis tincidunt quam eget bibendum. Suspendisse malesuada maximus ante, at molestie massa fringilla id.", image: "Apple"),
-        Headline2(id: 4, date: parseDate("2018-02-10"), title: "Aenean condimentum", text: "Ut eget massa erat. Morbi mauris diam, vulputate at luctus non, finibus et diam. Morbi et felis a lacus pharetra blandit.", image: "Banana"),
+        Headline5(id: 1, date: parseDate("2018-05-15"), title: "Proin suscipit maximus", text: "Quisque ultrices odio in neque eleifend eleifend. Praesent tincidunt euismod sem, et rhoncus lorem facilisis eget.", image: "Blueberry"),
+        Headline5(id: 2, date: parseDate("2018-02-15"), title: "In ac ante sapien", text: "Aliquam egestas ultricies dapibus. Nam molestie nunc in ipsum vehicula accumsan quis sit amet quam. Sed vel feugiat eros.", image: "Cantaloupe"),
+        Headline5(id: 3, date: parseDate("2018-03-05"), title: "Lorem Ipsum", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id ornare tortor, quis dictum enim. Morbi convallis tincidunt quam eget bibendum. Suspendisse malesuada maximus ante, at molestie massa fringilla id.", image: "Apple"),
+        Headline5(id: 4, date: parseDate("2018-02-10"), title: "Aenean condimentum", text: "Ut eget massa erat. Morbi mauris diam, vulputate at luctus non, finibus et diam. Morbi et felis a lacus pharetra blandit.", image: "Banana"),
     ]
 	
-	private func firstDayOfMonth(date: Date) -> Date {
-		let calendar = Calendar.current
-		let components = calendar.dateComponents([.year, .month], from: date)
-		return calendar.date(from: components)!
-	}
+
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,14 +64,18 @@ class GroupedTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
 		
-		let groups = Dictionary(grouping: self.headlines) { (headline) in
-			return firstDayOfMonth(date: headline.date)
-		}
-		self.sections = groups.map{(key, values) in
-			return MonthSection(month: key, headlines: values)
-		}
-		self.sections.sort{ (lhs, rhs) in lhs.month < rhs.month}
+//		let groups = Dictionary(grouping: self.rows) { (headline) in
+//			return firstDayOfMonth(date: headline.date)
+//		}
+//		self.sections = groups.map{(key, values) in
+//			return MonthSection(sectionItem: key, rows: values)
+//		}
+//
+		
+		self.sections = GroupedSection.group(rows: self.headlines, by: {firstDayOfMonth(date: $0.date)})
+		self.sections.sort{ (lhs, rhs) in lhs.sectionItem < rhs.sectionItem}
     }
+	
 
     // MARK: - Table view data source
 
@@ -72,7 +87,7 @@ class GroupedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
 		let section = self.sections[section]
-		return section.headlines.count
+		return section.rows.count
     }
 
     
@@ -81,9 +96,9 @@ class GroupedTableViewController: UITableViewController {
 
         // Configure the cell...
 		let section = self.sections[indexPath.section]
-		let headline = section.headlines[indexPath.row]
+		let headline = section.rows[indexPath.row]
 		
-//		let headline = self.headlines[indexPath.row]
+//		let headline = self.rows[indexPath.row]
 		cell.textLabel?.text = headline.title
 		cell.detailTextLabel?.text = headline.text
 		cell.imageView?.image = UIImage(named: headline.image)
@@ -93,7 +108,7 @@ class GroupedTableViewController: UITableViewController {
     
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		let section = self.sections[section]
-		let date = section.month
+		let date = section.sectionItem
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "MMMM yyyy"
 		return dateFormatter.string(from: date)
